@@ -1,3 +1,19 @@
+
+Solution 1: Two Pointers
+We use two pointers 
+ and 
+ pointing to the end of two arrays, and a pointer 
+ pointing to the end of the merged array.
+
+Every time we compare the two elements at the end of the two arrays, and move the larger one to the end of the merged array. Then we move the pointer one step forward, and repeat this process until the two pointers reach the start of the arrays.
+
+The time complexity is 
+, where 
+ and 
+ are the lengths of two arrays. The space complexity is 
+.
+
+
 #1
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
