@@ -1,0 +1,21 @@
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        d = {}
+        for i in range(len(s)):
+            if s[i] not in d:
+                d[s[i]] = 1
+            else: 
+                d[s[i]] +=1
+        
+        for j in range(len(t)):
+            if t[j] not in d:
+                return False
+            else:
+                d[t[j]] -= 1
+
+        return all([x == 0 for x in d.values()])
