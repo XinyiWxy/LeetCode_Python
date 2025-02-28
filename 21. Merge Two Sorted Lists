@@ -2,6 +2,23 @@
 
 
 class Solution:
+    def v1(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        if not list1: return list2
+        if not list2: return list1
+
+        header = ListNode()
+        current = header
+        while list1 and list2:
+            next = list1 if list1.val < list2.val else list2
+            current.next = next
+            current = current.next
+            next = next.next
+
+        if list1: current.next = list1
+        if list2: current.next = list2
+
+        return header.next
+
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         if not list1:
             return list2
@@ -24,6 +41,6 @@ class Solution:
 
             if not list1:
                 current.next = list2
-            else:
+            if not list2:
                 current.next = list1
         return header.next
