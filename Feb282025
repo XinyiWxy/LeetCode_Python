@@ -1,0 +1,10 @@
+note: 
+1. bubble sort (easy level)
+2. merge sort 
+
+a list is given, define a function, bubble_sort(), merge_sort(), return a sorted list. 
+
+e.g. calculate fibonacci sequence. (hint: for loop)
+
+a). recurrsion 
+b). dynamic programming 
