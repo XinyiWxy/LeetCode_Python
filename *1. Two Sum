@@ -1,4 +1,15 @@
 1. Two Sum
+(updated version)
+        d = {}
+        for i in range(len(nums)):
+            if nums[i] in d:
+                return [d[nums[i]], i]
+            d[target - nums[i]] = i
+
+
+
+
+
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
